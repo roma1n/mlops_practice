@@ -1018,7 +1018,21 @@ files = [
     {file = "tzdata-2023.3.tar.gz", hash = "sha256:11ef1e08e54acb0d4f95bdb1be05da659673de4acbd21bf9c69e94cc5e907a3a"},
 ]
 
+[[package]]
+name = "uniplot"
+version = "0.10.2"
+description = "Lightweight plotting to the terminal. 4x resolution via Unicode."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "uniplot-0.10.2-py3-none-any.whl", hash = "sha256:c5e5a2ecbe609a3d4a09027522c1696271a8551033f9bfafb5004cd8e503c88d"},
+    {file = "uniplot-0.10.2.tar.gz", hash = "sha256:8332a77c6dc196fd74ce8390d3749e594afb145390e30145b8bf92d2c96b2b20"},
+]
+
+[package.dependencies]
+numpy = ">=1.22.0"
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "3524c6d45645ce7d3f4c69d86be908666fff8b578be6d4a92b78e4c516b87916"
+content-hash = "b8c9855d25b284cc472d5b21e58c58d7cd2b3bfc5d5210e6a5db3a438cec1fa7"
