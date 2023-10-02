@@ -12,7 +12,29 @@ torch = "^2.0.1"
 matplotlib = "^3.8.0"
 seaborn = "^0.12.2"
 uniplot = "^0.10.2"
+pre-commit = "^3.4.0"
 
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+src_paths = ["mlops_practice"]
+profile = "black"
+line_length = 100
+lines_after_imports = 2
+
+[tool.nbqa.config]
+black = "pyproject.toml"
+isort = "pyproject.toml"
+flake8 = "setup.cfg"
+
+[tool.nbqa.addopts]
+flake8 = ["--extend-ignore=E402"]
+
+[tool.nbqa.mutate]
+black = 1
+isort = 1
 
 [build-system]
 requires = ["poetry-core"]
