@@ -1,11 +1,10 @@
 import torch
 from sklearn.datasets import load_digits
 
+import config
 
-TRAIN_RATIO = 0.7
 
-
-def get_train_val_datasets():
+def get_train_val_test_datasets():
     print("Loading dataset")
     X, y = load_digits(return_X_y=True)
     X = torch.tensor(X).reshape(X.shape[0], 1, 8, 8).float()
@@ -21,9 +20,12 @@ def get_train_val_datasets():
     )
     print(f"class: {y[0].item()}\n")
 
-    train_size = int(X.shape[0] * TRAIN_RATIO)
-    X_train, X_val = X[:train_size], X[train_size:]
-    y_train, y_val = y[:train_size], y[train_size:]
-    print(f"Train samples: {X_train.shape[0]}; val samples: {X_val.shape[0]}")
+    train_bound = int(X.shape[0] * config.TRAIN_RATIO)
+    val_bound = int(X.shape[0] * (config.TRAIN_RATIO + config.VAL_RATIO))
+    X_train, X_val, X_test = X[:train_bound], X[train_bound:val_bound], X[val_bound:]
+    y_train, y_val, y_test = y[:train_bound], y[train_bound:val_bound], y[val_bound:]
+    print(
+        f"Train samples: {X_train.shape[0]}; val samples: {X_val.shape[0]}; test samples: {X_test.shape[0]}"
+    )
 
-    return (X_train, y_train), (X_val, y_val)
+    return (X_train, y_train), (X_val, y_val), (X_test, y_test)
