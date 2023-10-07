@@ -3,3 +3,7 @@
 *.bin
 *.csv
 dist/
+docs/*rst
+!docs/index.rst
+*DS_Store
+*build
