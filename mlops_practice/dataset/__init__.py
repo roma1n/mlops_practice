@@ -1,7 +1,7 @@
 import torch
 from sklearn.datasets import load_digits
 
-import config
+from mlops_practice import config
 
 
 def get_train_val_test_datasets():

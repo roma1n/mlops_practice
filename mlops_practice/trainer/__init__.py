@@ -1,10 +1,11 @@
 import collections
 
+import pandas as pd
 import torch
 from torch import nn
 from uniplot import plot
 
-import config
+from mlops_practice import config
 
 
 class ClassifierTrainer:
@@ -37,10 +38,13 @@ class ClassifierTrainer:
         print(f"Train loss: {loss:.4f}")
         self.history["train_loss"].append(loss)
 
-    def process_val(self, dataset, batch_size=config.BATCH_SIZE):
+    def process_val(self, dataset, batch_size=config.BATCH_SIZE, output_csv=None):
         X_val, y_val = dataset
         losses = []
         accuracy = []
+        predicted_labels = []
+        labels = []
+        predictions = []
         self.model.train(False)
         with torch.no_grad():
             for i in range(0, X_val.shape[0], batch_size):
@@ -52,12 +56,31 @@ class ClassifierTrainer:
                 loss = self.criterion(logits, y_batch)
                 losses.append(loss.item())
 
+                if output_csv:
+                    labels.extend(y_batch.tolist())
+                    predicted_labels.extend(logits.argmax(axis=1).tolist())
+                    predictions.extend(logits.tolist())
+
         loss = sum(losses) / len(losses)
         accuracy = sum(accuracy) / len(accuracy)
         print(f"Loss: {loss:.4f}")
         print(f"Accuracy: {accuracy:.4f}")
         self.history["val_loss"].append(loss)
         self.history["val_accuracy"].append(accuracy)
+
+        if output_csv:
+            output_df = {
+                "label": labels,
+                "predicted_label": predicted_labels,
+            }
+            output_df.update(
+                {
+                    f"predicted_proba_{i}": list(map(lambda elem: elem[i], predictions))
+                    for i in range(10)
+                }
+            )
+            output_df = pd.DataFrame(output_df).round(4).reset_index()
+            output_df.to_csv(output_csv, index=False)
 
     def fit(self, train_dataset, val_dataset, n_epoch=config.N_EPOCH, batch_size=config.BATCH_SIZE):
         print("\n=== Validate model before training ===")

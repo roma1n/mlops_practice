@@ -1,7 +1,7 @@
-import config
-from dataset import get_train_val_test_datasets
-from nets import MultiLabelClassifier
-from trainer import ClassifierTrainer
+from mlops_practice import config
+from mlops_practice.dataset import get_train_val_test_datasets
+from mlops_practice.nets import MultiLabelClassifier
+from mlops_practice.trainer import ClassifierTrainer
 
 
 def main():

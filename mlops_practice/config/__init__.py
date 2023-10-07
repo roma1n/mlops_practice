@@ -1,4 +1,5 @@
 MODEL_PATH = "model.bin"
+RESULT_PATH = "result.csv"
 
 BATCH_SIZE = 32
 N_EPOCH = 25
