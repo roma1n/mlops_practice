@@ -9,6 +9,8 @@ from mlops_practice import config
 
 
 class ClassifierTrainer:
+    "Trains model for multi-class classification task"
+
     def __init__(self, model, optim=None, criterion=None):
         self.model = model
         self.optim = optim or torch.optim.Adam(
@@ -20,6 +22,7 @@ class ClassifierTrainer:
         self.history = collections.defaultdict(list)
 
     def process_train(self, dataset, batch_size=config.BATCH_SIZE):
+        "Trains model on dataset"
         X_train, y_train = dataset
         losses = []
         self.model.train(True)
@@ -39,6 +42,7 @@ class ClassifierTrainer:
         self.history["train_loss"].append(loss)
 
     def process_val(self, dataset, batch_size=config.BATCH_SIZE, output_csv=None):
+        "Evaluates model on dataset. Can be used for validation and inference"
         X_val, y_val = dataset
         losses = []
         accuracy = []
@@ -83,6 +87,7 @@ class ClassifierTrainer:
             output_df.to_csv(output_csv, index=False)
 
     def fit(self, train_dataset, val_dataset, n_epoch=config.N_EPOCH, batch_size=config.BATCH_SIZE):
+        "Implements fitting loop which includes train and validation stages run for several epochs"
         print("\n=== Validate model before training ===")
         self.process_val(val_dataset, batch_size)
 
@@ -93,6 +98,7 @@ class ClassifierTrainer:
         print("Model fitted!")
 
     def plot(self):
+        "Plots main metrics to stdout"
         print("\n=== Val accuracy by epoch ===")
         plot(self.history["val_accuracy"])
 
@@ -100,8 +106,10 @@ class ClassifierTrainer:
         plot([self.history["val_loss"], self.history["train_loss"]])
 
     def save_model(self, path):
+        "Saves model weights"
         torch.save(self.model.state_dict(), path)
 
     def load_model(self, path):
+        "Loads model weights"
         self.model.load_state_dict(torch.load(path))
         self.model.eval()

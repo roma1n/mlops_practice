@@ -5,6 +5,7 @@ from mlops_practice import config
 
 
 def get_train_val_test_datasets():
+    "Loads Digits dataset and separates it into train-val-test splits"
     print("Loading dataset")
     X, y = load_digits(return_X_y=True)
     X = torch.tensor(X).reshape(X.shape[0], 1, 8, 8).float()

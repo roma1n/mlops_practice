@@ -7,6 +7,8 @@ from uniplot import plot
 
 
 class ConvBlock(nn.Module):
+    "Implements Conv->BatchNorm->Relu chain"
+
     def __init__(self, in_channels, out_channels):
         super().__init__()
 
@@ -23,6 +25,8 @@ class ConvBlock(nn.Module):
 
 
 class ConvPoolBlock(nn.Module):
+    "Implements Conv->MaxPool chain"
+
     def __init__(self, in_channels, out_channels):
         super().__init__()
 
@@ -37,6 +41,8 @@ class ConvPoolBlock(nn.Module):
 
 
 class MultiLabelClassifier(nn.Module):
+    "Image classifier for 8x8 images and 10 classes"
+
     def __init__(self):
         super().__init__()
 
