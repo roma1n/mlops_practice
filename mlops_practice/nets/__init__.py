@@ -38,20 +38,24 @@ class ConvPoolBlock(nn.Module):
 class MultiLabelClassifier(nn.Module):
     "Image classifier for 8x8 images and 10 classes"
 
-    def __init__(self):
+    def __init__(self, p_dropout=0.2):
         super().__init__()
 
-        self.conv1 = ConvPoolBlock(1, 2)
-        self.conv2 = ConvPoolBlock(2, 2)
+        self.conv1 = ConvPoolBlock(1, 8)
+        self.conv2 = ConvPoolBlock(8, 16)
+        self.conv3 = ConvPoolBlock(16, 16)
         self.flatten = nn.Flatten()
-        self.head = nn.Linear(8, 10)
+        self.head = nn.Linear(144, 10)
+        self.dropout = nn.Dropout1d()
         self.softmax = nn.Softmax(dim=-1)
 
     def forward(self, x):
         x = self.conv1(x)
         x = self.conv2(x)
+        x = self.conv3(x)
         x = self.flatten(x)
         x = self.head(x)
+        x = self.dropout(x)
         x = self.softmax(x)
 
         return x

@@ -20,3 +20,13 @@ dvc add data/fashion_mnist
 ```bash
 dvc push
 ```
+
+Статус
+```bash
+dvc status
+```
+
+Привести данные в соответствие с `*.dvc` файлами
+```bash
+dvc checkout
+```
