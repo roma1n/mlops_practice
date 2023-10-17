@@ -1,9 +1,4 @@
-import collections
-
-import torch
-from sklearn.datasets import load_digits
 from torch import nn
-from uniplot import plot
 
 
 class ConvBlock(nn.Module):
