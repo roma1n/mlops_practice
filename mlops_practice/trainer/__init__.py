@@ -5,30 +5,40 @@ import torch
 from torch import nn
 from uniplot import plot
 
-from mlops_practice import config
-
 
 class ClassifierTrainer:
     "Trains model for multi-class classification task"
 
-    def __init__(self, model, optim=None, criterion=None):
+    def __init__(
+        self,
+        model: nn.Module,
+        batch_size: int,
+        n_epoch: int,
+        lr: float = None,
+        weight_decay: float = None,
+        optim: torch.optim.Optimizer = None,
+        criterion: nn.Module = None,
+    ):
         self.model = model
+        self.batch_size = batch_size
+        self.n_epoch = n_epoch
+
         self.optim = optim or torch.optim.Adam(
             self.model.parameters(),
-            lr=config.OPTIM_LR,
-            weight_decay=config.OPTIM_WEIGHT_DECAY,
+            lr=lr,
+            weight_decay=weight_decay,
         )
         self.criterion = criterion or nn.CrossEntropyLoss()
         self.history = collections.defaultdict(list)
 
-    def process_train(self, dataset, batch_size=config.BATCH_SIZE):
+    def process_train(self, dataset):
         "Trains model on dataset"
         X_train, y_train = dataset
         losses = []
         self.model.train(True)
-        for i in range(0, X_train.shape[0], batch_size):
-            X_batch = X_train[i : i + batch_size]
-            y_batch = y_train[i : i + batch_size]
+        for i in range(0, X_train.shape[0], self.batch_size):
+            X_batch = X_train[i : i + self.batch_size]
+            y_batch = y_train[i : i + self.batch_size]
 
             logits = self.model(X_batch)
             loss = self.criterion(logits, y_batch)
@@ -41,7 +51,7 @@ class ClassifierTrainer:
         print(f"Train loss: {loss:.4f}")
         self.history["train_loss"].append(loss)
 
-    def process_val(self, dataset, batch_size=config.BATCH_SIZE, output_csv=None):
+    def process_val(self, dataset, output_csv=None):
         "Evaluates model on dataset. Can be used for validation and inference"
         X_val, y_val = dataset
         losses = []
@@ -51,9 +61,9 @@ class ClassifierTrainer:
         predictions = []
         self.model.train(False)
         with torch.no_grad():
-            for i in range(0, X_val.shape[0], batch_size):
-                X_batch = X_val[i : i + batch_size]
-                y_batch = y_val[i : i + batch_size]
+            for i in range(0, X_val.shape[0], self.batch_size):
+                X_batch = X_val[i : i + self.batch_size]
+                y_batch = y_val[i : i + self.batch_size]
 
                 logits = self.model(X_batch)
                 accuracy.extend((logits.argmax(axis=1) == y_batch).tolist())
@@ -86,15 +96,15 @@ class ClassifierTrainer:
             output_df = pd.DataFrame(output_df).round(4).reset_index()
             output_df.to_csv(output_csv, index=False)
 
-    def fit(self, train_dataset, val_dataset, n_epoch=config.N_EPOCH, batch_size=config.BATCH_SIZE):
+    def fit(self, train_dataset, val_dataset):
         "Implements fitting loop which includes train and validation stages run for several epochs"
         print("\n=== Validate model before training ===")
-        self.process_val(val_dataset, batch_size)
+        self.process_val(val_dataset)
 
-        for epoch in range(1, 1 + n_epoch):
-            print(f"\n=== Epoch {epoch} of {n_epoch} ===")
-            self.process_train(train_dataset, batch_size)
-            self.process_val(val_dataset, batch_size)
+        for epoch in range(1, 1 + self.n_epoch):
+            print(f"\n=== Epoch {epoch} of {self.n_epoch} ===")
+            self.process_train(train_dataset)
+            self.process_val(val_dataset)
         print("Model fitted!")
 
     def plot(self):

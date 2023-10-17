@@ -47,4 +47,5 @@ autodoc_mock_imports = [
     "numpy",
     "pandas",
     "fire",
+    "hydra",
 ]

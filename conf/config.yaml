@@ -1,0 +1,16 @@
+path:
+  fashion_mnist_train: data/fashion_mnist/train.csv
+  fashion_mnist_test: data/fashion_mnist/test.csv
+  model: data/tmp/model.bin
+  result: data/tmp/result.csv
+
+model:
+  random_seed: 43
+  batch_size: 1024
+  n_epoch: 5
+  optim:
+    lr: 0.001
+    weight_decay: 0.00001
+
+dataset:
+  train_ratio: 0.7

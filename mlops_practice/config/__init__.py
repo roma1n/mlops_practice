@@ -1,17 +1,35 @@
-from pathlib import Path
+from dataclasses import dataclass
 
 
-DATA_PATH = Path("data")
-FASHION_MNIST_PATH = DATA_PATH.joinpath("fashion_mnist")
-FASHION_MNIST_TRAIN_VAL_PATH = FASHION_MNIST_PATH.joinpath("train.csv")
-FASHION_MNIST_TEST_PATH = FASHION_MNIST_PATH.joinpath("test.csv")
-MODEL_PATH = Path("model.bin")
-RESULT_PATH = Path("result.csv")
+@dataclass
+class PathParams:
+    fashion_mnist_train: str
+    fashion_mnist_test: str
+    model: str
+    result: str
 
-RANDOM_SEED = 42
-BATCH_SIZE = 1024
-N_EPOCH = 5
-OPTIM_LR = 1e-3
-OPTIM_WEIGHT_DECAY = 1e-5
 
-TRAIN_RATIO = 0.7
+@dataclass
+class OptimParams:
+    lr: float
+    weight_decay: float
+
+
+@dataclass
+class ModelParams:
+    random_seed: int
+    batch_size: int
+    n_epoch: int
+    optim: OptimParams
+
+
+@dataclass
+class DatasetParams:
+    train_ratio: float
+
+
+@dataclass
+class Params:
+    path: PathParams
+    model: ModelParams
+    dataset: DatasetParams
