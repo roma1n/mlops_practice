@@ -1,4 +1,5 @@
 import fire
+import torch
 
 from mlops_practice import config
 from mlops_practice.dataset import get_test_dataset, get_train_val_datasets
@@ -33,6 +34,7 @@ class MLOpsPractice(object):
 
 
 def main():
+    torch.manual_seed(config.RANDOM_SEED)
     fire.Fire(MLOpsPractice)
 
 

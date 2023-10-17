@@ -8,6 +8,7 @@ FASHION_MNIST_TEST_PATH = FASHION_MNIST_PATH.joinpath("test.csv")
 MODEL_PATH = Path("model.bin")
 RESULT_PATH = Path("result.csv")
 
+RANDOM_SEED = 42
 BATCH_SIZE = 1024
 N_EPOCH = 5
 OPTIM_LR = 1e-3

@@ -37,4 +37,14 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_theme = "alabaster"
 
-autodoc_mock_imports = ["sklearn", "torch", "matplotlib", "seaborn", "uniplot", "numpy", "pandas"]
+# TODO: Take from pyproject.toml
+autodoc_mock_imports = [
+    "sklearn",
+    "torch",
+    "matplotlib",
+    "seaborn",
+    "uniplot",
+    "numpy",
+    "pandas",
+    "fire",
+]
