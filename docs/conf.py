@@ -6,6 +6,11 @@
 # -- Path setup --------------------------------------------------------------
 
 import sys
+import tomllib
+
+
+with open("../pyproject.toml", "rb") as f:
+    pyproject = tomllib.load(f)
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -38,14 +43,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 html_theme = "alabaster"
 
 # TODO: Take from pyproject.toml
-autodoc_mock_imports = [
+autodoc_mock_imports = list(pyproject["tool"]["poetry"]["dependencies"].keys()) + [
     "sklearn",
-    "torch",
-    "matplotlib",
-    "seaborn",
-    "uniplot",
-    "numpy",
-    "pandas",
-    "fire",
     "hydra",
 ]
