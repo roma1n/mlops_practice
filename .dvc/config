@@ -2,3 +2,7 @@
     remote = storage
 ['remote "storage"']
     url = gdrive://18ExTxuzi0beJOtZ10DM4lgkcAauV4o59
+['remote "dvcreader"']
+    url = gdrive://18ExTxuzi0beJOtZ10DM4lgkcAauV4o59
+    gdrive_use_service_account = true
+    gdrive_service_account_json_file_path = ../mlops-dvcreader.json
