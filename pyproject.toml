@@ -5,17 +5,11 @@ description = ""
 authors = ["roma1n <golubtsowroman@gmail.com>"]
 readme = "README.md"
 
-[[tool.poetry.source]]
-name = "torch_cpu"
-url = "https://download.pytorch.org/whl/cpu"
-default = false
-secondary = true
-
 [tool.poetry.group.torch_cpu]
 optional = true
 
 [tool.poetry.group.torch_cpu.dependencies]
-torch = { version = "2.0.1", source="torch_cpu"}
+torch = { url = "https://download.pytorch.org/whl/cpu-cxx11-abi/torch-2.0.1%2Bcpu.cxx11.abi-cp311-cp311-linux_x86_64.whl#sha256=b0bb23f28e5fc8fee76b8547c9ec0ecff9476da32225c7734090b658fbbc3d38" }
 
 [tool.poetry.group.torch_cuda]
 optional = true
