@@ -7,6 +7,7 @@ path:
 model:
   random_seed: 43
   batch_size: 1024
+  num_workers: 10
   n_epoch: 5
   optim:
     lr: 0.001

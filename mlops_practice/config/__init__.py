@@ -19,6 +19,7 @@ class OptimParams:
 class ModelParams:
     random_seed: int
     batch_size: int
+    num_workers: int
     n_epoch: int
     optim: OptimParams
 

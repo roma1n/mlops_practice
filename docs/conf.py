@@ -43,7 +43,12 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 html_theme = "alabaster"
 
 # TODO: Take from pyproject.toml
-autodoc_mock_imports = list(pyproject["tool"]["poetry"]["dependencies"].keys()) + [
+autodoc_mock_imports = list(
+    map(
+        lambda module_name: module_name.replace("-", "_"),
+        pyproject["tool"]["poetry"]["dependencies"].keys(),
+    )
+) + [
     "sklearn",
     "hydra",
 ]
