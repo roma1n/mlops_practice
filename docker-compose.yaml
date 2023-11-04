@@ -1,0 +1,5 @@
+services:
+  mlops_practice:
+    build: .
+    volumes:
+      - ./data:/app/data
