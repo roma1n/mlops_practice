@@ -51,4 +51,5 @@ autodoc_mock_imports = list(
 ) + [
     "sklearn",
     "hydra",
+    "torch",
 ]
