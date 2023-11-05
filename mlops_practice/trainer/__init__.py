@@ -116,6 +116,10 @@ class ClassifierTrainer:
             log_every_n_steps=1,
             logger=[
                 pl.loggers.CSVLogger("logs"),
+                pl.loggers.MLFlowLogger(
+                    experiment_name='experiment',
+                    tracking_uri='http://tracking_server:5000',
+                )
                 # pl.loggers.TensorBoardLogger("tb_logs"),
             ],
         )

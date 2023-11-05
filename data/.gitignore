@@ -1,3 +1,5 @@
 /fashion_mnist
 /tmp/*
 !/tmp/.gitkeep
+/mlflow/*
+!/mlflow/.gitkeep
