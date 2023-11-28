@@ -1,0 +1,56 @@
+mlops\_practice package
+=======================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   mlops_practice.config
+   mlops_practice.dataset
+   mlops_practice.nets
+   mlops_practice.trainer
+
+Submodules
+----------
+
+mlops\_practice.commands module
+-------------------------------
+
+.. automodule:: mlops_practice.commands
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mlops\_practice.git\_utils module
+---------------------------------
+
+.. automodule:: mlops_practice.git_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mlops\_practice.infer module
+----------------------------
+
+.. automodule:: mlops_practice.infer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mlops\_practice.train module
+----------------------------
+
+.. automodule:: mlops_practice.train
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: mlops_practice
+   :members:
+   :undoc-members:
+   :show-inheritance:

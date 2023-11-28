@@ -1,0 +1,10 @@
+mlops\_practice.trainer package
+===============================
+
+Module contents
+---------------
+
+.. automodule:: mlops_practice.trainer
+   :members:
+   :undoc-members:
+   :show-inheritance:

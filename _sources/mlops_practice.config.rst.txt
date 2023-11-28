@@ -1,0 +1,10 @@
+mlops\_practice.config package
+==============================
+
+Module contents
+---------------
+
+.. automodule:: mlops_practice.config
+   :members:
+   :undoc-members:
+   :show-inheritance:

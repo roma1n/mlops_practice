@@ -1,0 +1,10 @@
+mlops\_practice.nets package
+============================
+
+Module contents
+---------------
+
+.. automodule:: mlops_practice.nets
+   :members:
+   :undoc-members:
+   :show-inheritance:

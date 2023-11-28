@@ -1,0 +1,10 @@
+mlops\_practice.dataset package
+===============================
+
+Module contents
+---------------
+
+.. automodule:: mlops_practice.dataset
+   :members:
+   :undoc-members:
+   :show-inheritance:

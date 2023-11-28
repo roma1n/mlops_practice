@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mlops_practice package &#8212; MLOps Pracatice  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="mlops_practice.config package" href="mlops_practice.config.html" />
+    <link rel="prev" title="mlops_practice" href="modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="mlops-practice-package">
+<h1>mlops_practice package<a class="headerlink" href="#mlops-practice-package" title="Link to this heading">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mlops_practice.config.html">mlops_practice.config package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mlops_practice.config.html#module-mlops_practice.config">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.DatasetParams"><code class="docutils literal notranslate"><span class="pre">DatasetParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.DatasetParams.train_ratio"><code class="docutils literal notranslate"><span class="pre">DatasetParams.train_ratio</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.Logging"><code class="docutils literal notranslate"><span class="pre">Logging</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.Logging.mlflow_tracking_uri"><code class="docutils literal notranslate"><span class="pre">Logging.mlflow_tracking_uri</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.ModelParams"><code class="docutils literal notranslate"><span class="pre">ModelParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.ModelParams.batch_size"><code class="docutils literal notranslate"><span class="pre">ModelParams.batch_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.ModelParams.n_epoch"><code class="docutils literal notranslate"><span class="pre">ModelParams.n_epoch</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.ModelParams.num_workers"><code class="docutils literal notranslate"><span class="pre">ModelParams.num_workers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.ModelParams.optim"><code class="docutils literal notranslate"><span class="pre">ModelParams.optim</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.ModelParams.random_seed"><code class="docutils literal notranslate"><span class="pre">ModelParams.random_seed</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.OptimParams"><code class="docutils literal notranslate"><span class="pre">OptimParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.OptimParams.lr"><code class="docutils literal notranslate"><span class="pre">OptimParams.lr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.OptimParams.weight_decay"><code class="docutils literal notranslate"><span class="pre">OptimParams.weight_decay</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.Params"><code class="docutils literal notranslate"><span class="pre">Params</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.Params.dataset"><code class="docutils literal notranslate"><span class="pre">Params.dataset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.Params.logging"><code class="docutils literal notranslate"><span class="pre">Params.logging</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.Params.model"><code class="docutils literal notranslate"><span class="pre">Params.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.Params.path"><code class="docutils literal notranslate"><span class="pre">Params.path</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.PathParams"><code class="docutils literal notranslate"><span class="pre">PathParams</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.PathParams.fashion_mnist_test"><code class="docutils literal notranslate"><span class="pre">PathParams.fashion_mnist_test</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.PathParams.fashion_mnist_train"><code class="docutils literal notranslate"><span class="pre">PathParams.fashion_mnist_train</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.PathParams.model"><code class="docutils literal notranslate"><span class="pre">PathParams.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.config.html#mlops_practice.config.PathParams.result"><code class="docutils literal notranslate"><span class="pre">PathParams.result</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mlops_practice.dataset.html">mlops_practice.dataset package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mlops_practice.dataset.html#module-mlops_practice.dataset">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mlops_practice.dataset.html#mlops_practice.dataset.MNISTDataModule"><code class="docutils literal notranslate"><span class="pre">MNISTDataModule</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.dataset.html#mlops_practice.dataset.MNISTDataModule.get_test_dataset"><code class="docutils literal notranslate"><span class="pre">MNISTDataModule.get_test_dataset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.dataset.html#mlops_practice.dataset.MNISTDataModule.get_train_val_datasets"><code class="docutils literal notranslate"><span class="pre">MNISTDataModule.get_train_val_datasets()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.dataset.html#mlops_practice.dataset.MNISTDataModule.make_data_loader"><code class="docutils literal notranslate"><span class="pre">MNISTDataModule.make_data_loader()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.dataset.html#mlops_practice.dataset.MNISTDataModule.test_dataloader"><code class="docutils literal notranslate"><span class="pre">MNISTDataModule.test_dataloader()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.dataset.html#mlops_practice.dataset.MNISTDataModule.train_dataloader"><code class="docutils literal notranslate"><span class="pre">MNISTDataModule.train_dataloader()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.dataset.html#mlops_practice.dataset.MNISTDataModule.val_dataloader"><code class="docutils literal notranslate"><span class="pre">MNISTDataModule.val_dataloader()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mlops_practice.nets.html">mlops_practice.nets package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mlops_practice.nets.html#module-mlops_practice.nets">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mlops_practice.nets.html#mlops_practice.nets.ConvBlock"><code class="docutils literal notranslate"><span class="pre">ConvBlock</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.nets.html#mlops_practice.nets.ConvBlock.forward"><code class="docutils literal notranslate"><span class="pre">ConvBlock.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlops_practice.nets.html#mlops_practice.nets.ConvPoolBlock"><code class="docutils literal notranslate"><span class="pre">ConvPoolBlock</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.nets.html#mlops_practice.nets.ConvPoolBlock.forward"><code class="docutils literal notranslate"><span class="pre">ConvPoolBlock.forward()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlops_practice.nets.html#mlops_practice.nets.MultiLabelClassifier"><code class="docutils literal notranslate"><span class="pre">MultiLabelClassifier</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.nets.html#mlops_practice.nets.MultiLabelClassifier.forward"><code class="docutils literal notranslate"><span class="pre">MultiLabelClassifier.forward()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mlops_practice.trainer.html">mlops_practice.trainer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mlops_practice.trainer.html#module-mlops_practice.trainer">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mlops_practice.trainer.html#mlops_practice.trainer.ClassifierTrainer"><code class="docutils literal notranslate"><span class="pre">ClassifierTrainer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.trainer.html#mlops_practice.trainer.ClassifierTrainer.fit"><code class="docutils literal notranslate"><span class="pre">ClassifierTrainer.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.trainer.html#mlops_practice.trainer.ClassifierTrainer.load_model"><code class="docutils literal notranslate"><span class="pre">ClassifierTrainer.load_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.trainer.html#mlops_practice.trainer.ClassifierTrainer.predict"><code class="docutils literal notranslate"><span class="pre">ClassifierTrainer.predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.trainer.html#mlops_practice.trainer.ClassifierTrainer.save_model"><code class="docutils literal notranslate"><span class="pre">ClassifierTrainer.save_model()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mlops_practice.trainer.html#mlops_practice.trainer.TrainerModule"><code class="docutils literal notranslate"><span class="pre">TrainerModule</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.trainer.html#mlops_practice.trainer.TrainerModule.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">TrainerModule.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.trainer.html#mlops_practice.trainer.TrainerModule.forward"><code class="docutils literal notranslate"><span class="pre">TrainerModule.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.trainer.html#mlops_practice.trainer.TrainerModule.predict_step"><code class="docutils literal notranslate"><span class="pre">TrainerModule.predict_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.trainer.html#mlops_practice.trainer.TrainerModule.training_step"><code class="docutils literal notranslate"><span class="pre">TrainerModule.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlops_practice.trainer.html#mlops_practice.trainer.TrainerModule.validation_step"><code class="docutils literal notranslate"><span class="pre">TrainerModule.validation_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-mlops_practice.commands">
+<span id="mlops-practice-commands-module"></span><h2>mlops_practice.commands module<a class="headerlink" href="#module-mlops_practice.commands" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mlops_practice.commands.MLOpsPractice">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mlops_practice.commands.</span></span><span class="sig-name descname"><span class="pre">MLOpsPractice</span></span><a class="headerlink" href="#mlops_practice.commands.MLOpsPractice" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mlops_practice.commands.MLOpsPractice.infer">
+<span class="sig-name descname"><span class="pre">infer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mlops_practice.commands.MLOpsPractice.infer" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlops_practice.commands.MLOpsPractice.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mlops_practice.commands.MLOpsPractice.train" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mlops_practice.commands.MLOpsPractice.train_infer">
+<span class="sig-name descname"><span class="pre">train_infer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mlops_practice.commands.MLOpsPractice.train_infer" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mlops_practice.commands.main">
+<span class="sig-prename descclassname"><span class="pre">mlops_practice.commands.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mlops_practice.commands.main" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-mlops_practice.git_utils">
+<span id="mlops-practice-git-utils-module"></span><h2>mlops_practice.git_utils module<a class="headerlink" href="#module-mlops_practice.git_utils" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mlops_practice.git_utils.get_commit_id">
+<span class="sig-prename descclassname"><span class="pre">mlops_practice.git_utils.</span></span><span class="sig-name descname"><span class="pre">get_commit_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mlops_practice.git_utils.get_commit_id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-mlops_practice.infer">
+<span id="mlops-practice-infer-module"></span><h2>mlops_practice.infer module<a class="headerlink" href="#module-mlops_practice.infer" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mlops_practice.infer.main">
+<span class="sig-prename descclassname"><span class="pre">mlops_practice.infer.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mlops_practice.infer.main" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-mlops_practice.train">
+<span id="mlops-practice-train-module"></span><h2>mlops_practice.train module<a class="headerlink" href="#module-mlops_practice.train" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mlops_practice.train.main">
+<span class="sig-prename descclassname"><span class="pre">mlops_practice.train.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mlops_practice.train.main" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-mlops_practice">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mlops_practice" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MLOps Pracatice</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">mlops_practice</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mlops_practice package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">mlops_practice</a><ul>
+      <li>Previous: <a href="modules.html" title="previous chapter">mlops_practice</a></li>
+      <li>Next: <a href="mlops_practice.config.html" title="next chapter">mlops_practice.config package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Roman Golubtsov.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/mlops_practice.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,7 @@
+mlops_practice
+==============
+
+.. toctree::
+   :maxdepth: 4
+
+   mlops_practice
