@@ -1,9 +1,11 @@
-from typing import Any, Tuple
+from typing import Any, Dict, Tuple
 
 import pandas as pd
 import pytorch_lightning as pl
 import torch
 from torch import nn
+
+from mlops_practice import git_utils
 
 
 class TrainerModule(pl.LightningModule):
@@ -100,9 +102,13 @@ class ClassifierTrainer:
         weight_decay: float = None,
         optim: torch.optim.Optimizer = None,
         criterion: nn.Module = None,
+        tracking_uri: str = None,
+        params_for_logging: Dict[str, Any] = None,
     ):
         self.model = model
         self.n_epoch = n_epoch
+        self.tracking_uri = tracking_uri
+        params_for_logging = params_for_logging or {}
         self.trainer_module = TrainerModule(
             model=model,
             lr=lr,
@@ -110,17 +116,24 @@ class ClassifierTrainer:
             optim=optim,
             criterion=criterion,
         )
+
+        mlflow_logger = pl.loggers.MLFlowLogger(
+            experiment_name="experiment",
+            tracking_uri=self.tracking_uri,
+        )
+        mlflow_logger.log_hyperparams(
+            {
+                "params": params_for_logging,
+                "git_commit_id": git_utils.get_commit_id(),
+            }
+        )
         self.pl_trainer = pl.Trainer(
             precision="bf16-mixed",
             max_epochs=self.n_epoch,
             log_every_n_steps=1,
             logger=[
                 pl.loggers.CSVLogger("logs"),
-                pl.loggers.MLFlowLogger(
-                    experiment_name='experiment',
-                    tracking_uri='http://tracking_server:5000',
-                )
-                # pl.loggers.TensorBoardLogger("tb_logs"),
+                mlflow_logger,
             ],
         )
 

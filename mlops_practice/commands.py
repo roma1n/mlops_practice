@@ -1,3 +1,5 @@
+import subprocess
+
 import fire
 import hydra
 import torch
@@ -15,6 +17,9 @@ cs.store(name="params", node=Params)
 
 class MLOpsPractice(object):
     def __init__(self):
+        print("Running dvc pull")
+        subprocess.run(["dvc", "pull", "-r", "dvcreader"])
+
         with hydra.initialize(config_path="../conf", version_base="1.3"):
             self.params: Params = hydra.compose(config_name="config")
         torch.manual_seed(self.params.model.random_seed)
@@ -32,6 +37,8 @@ class MLOpsPractice(object):
             n_epoch=self.params.model.n_epoch,
             lr=self.params.model.optim.lr,
             weight_decay=self.params.model.optim.weight_decay,
+            tracking_uri=self.params.logging.mlflow_tracking_uri,
+            params_for_logging=vars(self.params)["_content"],
         )
 
     def train(self):

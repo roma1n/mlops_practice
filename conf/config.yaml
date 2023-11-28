@@ -15,3 +15,6 @@ model:
 
 dataset:
   train_ratio: 0.7
+
+logging:
+  mlflow_tracking_uri: http://tracking_server:5000

@@ -30,7 +30,13 @@ class DatasetParams:
 
 
 @dataclass
+class Logging:
+    mlflow_tracking_uri: str
+
+
+@dataclass
 class Params:
     path: PathParams
     model: ModelParams
     dataset: DatasetParams
+    logging: Logging

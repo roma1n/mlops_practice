@@ -14,11 +14,10 @@ RUN apt update && \
 # Setup project dependencies
 COPY poetry.lock pyproject.toml /app/
 WORKDIR /app
-RUN poetry install --no-interaction --no-ansi -vvv --sync --with torch_cpu --no-root
+RUN poetry install --no-interaction --no-ansi -vvv --no-root
 
 # Setup project
 COPY . /app
 RUN poetry install --only-root
 
-CMD dvc pull -r dvcreader && \
-    poetry run mlops train_infer
+CMD poetry run mlops train_infer
